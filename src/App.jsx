@@ -13,7 +13,7 @@ const App = () => {
   const [graphData, setGraphData] = useState({ date: [], amount: [] });
 
   useEffect(() => {
-    const fetchData = async () => {
+    /*const fetchData = async () => {
       try {
         const response = await axios.get('https://alzahraasaied.github.io/Transactions/db.json');
         const data = response.data;
@@ -26,7 +26,7 @@ const App = () => {
     };
 
     fetchData();
-  }, []);
+  }, []);*/
 
   const handleFilterChange = (filterType, filterValue) => {
     let filtered = [...customers];
