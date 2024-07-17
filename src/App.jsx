@@ -15,7 +15,7 @@ const App = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('https://alzahraasaied.github.io/Transactions/db.json');
+        const response = await axios.get('https://alzahraasaied.github.io/CustomerTransactions/db.json');
         const data = response.data;
         setCustomers(data.customers);
         setTransactions(data.transactions);
