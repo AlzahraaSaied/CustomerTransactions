@@ -1,11 +1,9 @@
 // src/App.jsx
 import { useState, useEffect } from 'react';
-4
 import CustomerTable from './components/CustomerTable/CustomerTable';
 import TransactionGraph from './components/TransactionGraph/TransactionGraph';
 import axios from 'axios';
 import Sidebar from './components/Sidebar/Sidebar';
-
 
 const App = () => {
   const [customers, setCustomers] = useState([]);
@@ -17,11 +15,11 @@ const App = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const customersResponse = await axios.get('http://localhost:5001/customers');
-        const transactionsResponse = await axios.get('http://localhost:5001/transactions');
-        setCustomers(customersResponse.data);
-        setTransactions(transactionsResponse.data);
-        setFilteredCustomers(customersResponse.data); // Initially set to all customers
+        const response = await axios.get('https://alzahraasaied.github.io/CustomerTransactions/db.json');
+        const data = response.data;
+        setCustomers(data.customers);
+        setTransactions(data.transactions);
+        setFilteredCustomers(data.customers); // Initially set to all customers
       } catch (error) {
         console.error('Error fetching data:', error);
       }
